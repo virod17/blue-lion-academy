@@ -306,34 +306,29 @@
   .academic-offer .section-sub{color:rgba(255,255,255,.7);}
 
   .rise-track{
-    position:relative;
     max-width:var(--maxw);
-    margin:4rem auto 0;
+    margin:4.5rem auto 0;
     display:grid;
     grid-template-columns:repeat(5,1fr);
     gap:1.2rem;
     align-items:end;
-  }
-  .rise-track::before{
-    content:'';
-    position:absolute;
-    left:0;right:0;top:50%;
-    height:1px;
-    background:rgba(255,255,255,.12);
   }
   .rise-step{
     display:flex;
     flex-direction:column;
     align-items:center;
     text-align:center;
-    position:relative;
+    /* el transform no afecta el cálculo de alineación del grid,
+       así que el escalonado se ve siempre, sin importar el
+       largo del texto de cada tarjeta */
+    transition:transform .3s ease;
   }
   /* staggered rise: each step sits a bit higher, echoing "Minds that Rise" */
-  .rise-step:nth-child(1){margin-top:96px;}
-  .rise-step:nth-child(2){margin-top:72px;}
-  .rise-step:nth-child(3){margin-top:48px;}
-  .rise-step:nth-child(4){margin-top:24px;}
-  .rise-step:nth-child(5){margin-top:0;}
+  .rise-step:nth-child(1){transform:translateY(0);}
+  .rise-step:nth-child(2){transform:translateY(-24px);}
+  .rise-step:nth-child(3){transform:translateY(-48px);}
+  .rise-step:nth-child(4){transform:translateY(-72px);}
+  .rise-step:nth-child(5){transform:translateY(-96px);}
 
   .rise-dot{
     width:14px;height:14px;
@@ -341,6 +336,7 @@
     background:var(--gold);
     box-shadow:0 0 0 5px rgba(201,169,97,.18);
     margin-bottom:1rem;
+    flex-shrink:0;
   }
   .rise-card{
     background:rgba(255,255,255,.05);
@@ -348,20 +344,22 @@
     border-radius:12px;
     padding:1.4rem 1.1rem;
     width:100%;
+    min-height:190px;
+    display:flex;
+    flex-direction:column;
   }
   .rise-card h3{color:#fff;font-size:1.05rem;margin-bottom:.55rem;}
   .rise-card p{color:rgba(255,255,255,.65);font-size:.85rem;line-height:1.5;}
 
   @media (max-width:900px){
     .rise-track{grid-template-columns:1fr;gap:1rem;}
-    .rise-track::before{display:none;}
-    .rise-step{margin-top:0 !important;flex-direction:row;text-align:left;align-items:flex-start;gap:1rem;}
-    .rise-dot{margin-bottom:0;margin-top:.4rem;flex-shrink:0;}
+    .rise-step{transform:none !important;flex-direction:row;text-align:left;align-items:flex-start;gap:1rem;}
+    .rise-card{min-height:0;}
+    .rise-dot{margin-bottom:0;margin-top:.4rem;}
   }
 
   /* ============ FACILITIES ============ */
   .facilities{padding:6rem 0;background:var(--paper);}
-  .facilities-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
   .facility-image{
     aspect-ratio:4/3;
     border-radius:12px;
@@ -370,6 +368,72 @@
   }
   .facility-image img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
   .facility-image:hover img{transform:scale(1.06);}
+
+  /* ============ FACILITIES CAROUSEL ============ */
+  .carousel{
+    position:relative;
+    max-width:900px;
+    margin:0 auto;
+  }
+  .carousel-viewport{
+    overflow:hidden;
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    background:linear-gradient(135deg,var(--navy-500),var(--navy-900));
+  }
+  .carousel-track{
+    display:flex;
+    transition:transform .5s cubic-bezier(.65,0,.35,1);
+  }
+  .carousel-slide{
+    flex:0 0 100%;
+    aspect-ratio:16/9;
+  }
+  .carousel-slide img{width:100%;height:100%;object-fit:cover;}
+
+  .carousel-arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:44px;height:44px;
+    border-radius:50%;
+    border:none;
+    background:rgba(255,255,255,.92);
+    color:var(--navy-900);
+    display:flex;align-items:center;justify-content:center;
+    cursor:pointer;
+    box-shadow:0 8px 20px rgba(10,37,64,.2);
+    transition:background .2s ease, transform .2s ease;
+  }
+  .carousel-arrow:hover{background:var(--gold);color:#fff;}
+  .carousel-arrow.prev{left:-14px;}
+  .carousel-arrow.next{right:-14px;}
+
+  @media (max-width:600px){
+    .carousel-arrow{width:38px;height:38px;}
+    .carousel-arrow.prev{left:8px;}
+    .carousel-arrow.next{right:8px;}
+  }
+
+  .carousel-dots{
+    display:flex;
+    justify-content:center;
+    gap:.55rem;
+    margin-top:1.3rem;
+  }
+  .carousel-dots button{
+    width:9px;height:9px;
+    border-radius:50%;
+    border:none;
+    background:var(--line);
+    cursor:pointer;
+    padding:0;
+    transition:background .25s ease, transform .25s ease;
+  }
+  .carousel-dots button.is-active{
+    background:var(--gold);
+    transform:scale(1.25);
+  }
 
   /* ============ CONTACT ============ */
   .contact{padding:6rem 0;background:var(--cream);}
