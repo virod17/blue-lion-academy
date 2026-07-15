@@ -1,350 +1,460 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blue Lion Academy — Leaders with Purpose, Minds that Rise</title>
-<meta name="description" content="Blue Lion Academy: educación bilingüe con fundamentos cristianos en Ciudad de Panamá. Day Care hasta 3er grado. Líderes con propósito, mentes que se elevan.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Lion Academy — Leaders with Purpose, Minds that Rise</title>
+    <meta name="description"
+        content="Blue Lion Academy: educación bilingüe con fundamentos cristianos en Ciudad de Panamá. Day Care hasta 3er grado. Líderes con propósito, mentes que se elevan.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
+
 <body>
 
-<!-- ===== HEADER ===== -->
-<header class="header">
-  <nav class="nav">
-    <a href="#inicio" class="brand">
-      <img src="img/logo.png" alt="Blue Lion Academy">
-      <span class="brand-text">Blue Lion Academy<span>Leaders with Purpose</span></span>
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <nav class="nav">
+            <a href="#inicio" class="brand">
+                <img src="img/logo.png" alt="Blue Lion Academy">
+                <span class="brand-text">Blue Lion Academy<span>Leaders with Purpose</span></span>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false"
+                aria-controls="navMenu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#filosofia">Filosofía</a></li>
+                <li><a href="#oferta-academica">Oferta Académica</a></li>
+                <li><a href="#instalaciones">Instalaciones</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#contacto" class="btn-primary">Aplicar ahora</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="inicio">
+        <div class="hero-inner">
+            <span class="eyebrow">Educación bilingüe · fundamentos cristianos</span>
+            <h1>Blue Lion Academy</h1>
+            <p class="tagline">Leaders with Purpose. Minds that Rise.</p>
+            <p class="lede">Acompañamos a cada estudiante desde Day Care hasta 3er grado con un modelo bilingüe y
+                cristiano que forma pensamiento crítico, carácter y liderazgo.</p>
+            <div class="hero-buttons">
+                <a href="#contacto" class="btn-primary"
+                    style="background:var(--gold); color:var(--navy-900) !important;">Conoce nuestra propuesta</a>
+                <a href="#nosotros" class="btn-secondary">Sobre nosotros</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SOBRE NOSOTROS ===== -->
+    <section class="about" id="nosotros">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <span class="section-eyebrow">Quiénes somos</span>
+                <h2 class="section-title">Sobre Nosotros</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-card reveal">
+                    <div class="about-icon"><img
+                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB4PSIwIiB5PSIwIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgY2xhc3M9IiI+PGc+PHBhdGggZD0ibTQ0MS45NSA5MS43MDEtMjIuOTI1LTIyLjkyNVYwbC03MS4zMjMgNzMuODcxLTUuMDk0IDU4LjU4Ny03My44NzEgNzMuODcxaC0xMi43MzZjLTI4LjAyIDAtNTAuOTQ1IDIyLjkyNS01MC45NDUgNTAuOTQ1czIyLjkyNSA1MC45NDUgNTAuOTQ1IDUwLjk0NSA1MC45NDUtMjIuOTI1IDUwLjk0NS01MC45NDVjMC01LjA5NCAwLTcuNjQyLTIuNTQ3LTEyLjczNmw3My44NzEtNzMuODcxIDU4LjU4Ny01LjA5NSA3My44NzEtNzMuODcxSDQ0MS45NXoiIGZpbGw9IiNmZmZmZmYiLz48cGF0aCBkPSJNMzkzLjU1MiAxOTMuNTkyaC0yLjU0N2wtMzUuNjYyIDM4LjIwOWMyLjU0NyA3LjY0MiAyLjU0NyAxNy44MzEgMi41NDcgMjUuNDczIDAgNTYuMDQtNDUuODUxIDEwMS44OTEtMTAxLjg5MSAxMDEuODkxcy0xMDEuODkxLTQ1Ljg1MS0xMDEuODkxLTEwMS44OTFTMTk5Ljk2IDE1NS4zODMgMjU2IDE1NS4zODNjMTAuMTg5IDAgMTcuODMxIDIuNTQ3IDI1LjQ3MyAyLjU0N2wzOC4yMDktMzguMjA5di0yLjU0N2MtMjAuMzc4LTcuNjQyLTQwLjc1Ni0xMi43MzYtNjMuNjgyLTEyLjczNi04NC4wNiAwLTE1Mi44MzYgNjguNzc2LTE1Mi44MzYgMTUyLjgzNlMxNzEuOTQgNDEwLjEwOSAyNTYgNDEwLjEwOXMxNTIuODM2LTY4Ljc3NiAxNTIuODM2LTE1Mi44MzZjMC0yMi45MjUtNS4wOTUtNDMuMzAzLTE1LjI4NC02My42ODF6IiBmaWxsPSIjZmZmZmZmIi8+PHBhdGggZD0ibTQ4Ny44MDEgMTUyLjgzNi0zOC4yMDkgMzUuNjYyYzUuMDk1IDIwLjM3OCAxMC4xODkgNDMuMzA0IDEwLjE4OSA2OC43NzYgMCAxMTIuMDgtOTEuNzAxIDIwMy43ODEtMjAzLjc4MSAyMDMuNzgxUzUyLjIxOSAzNjkuMzUzIDUyLjIxOSAyNTcuMjc0IDE0My45MiA1My40OTMgMjU2IDUzLjQ5M2MyMi45MjUgMCA0NS44NTEgNS4wOTUgNjguNzc2IDEyLjczNnYtMi41NDdsMzguMjA5LTM4LjIwOUMzMjkuODcxIDEwLjE4OSAyOTQuMjA5IDIuNTQ3IDI1NiAyLjU0NyAxMTUuOSAyLjU0NyAxLjI3NCAxMTcuMTc0IDEuMjc0IDI1Ny4yNzRTMTE1LjkgNTEyIDI1NiA1MTJzMjU0LjcyNi0xMTQuNjI3IDI1NC43MjYtMjU0LjcyNmMwLTM4LjIwOS03LjY0MS03My44NzEtMjIuOTI1LTEwNC40Mzh6IiBmaWxsPSIjZmZmZmZmIi8+PC9nPjwvc3ZnPg=="
+                            alt=""></div>
+                    <h3>Misión</h3>
+                    <p>Educar y guiar integralmente a cada estudiante mediante un modelo bilingüe y cristiano que
+                        promueva el pensamiento crítico, el descubrimiento de sus talentos y el desarrollo de
+                        habilidades estratégicas y creativas. Inspiramos a nuestros alumnos a ser líderes con propósito,
+                        comprometidos con hacer la diferencia en la sociedad y reflejar valores que honren a Dios.</p>
+                </div>
+                <div class="about-card reveal">
+                    <div class="about-icon"><img
+                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB4PSIwIiB5PSIwIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgY2xhc3M9IiI+PGc+PHBhdGggZD0iTTUwOS4xODggMjQ3LjI3Yy00LjU3LTYuMzktMTEzLjUyMS0xNTYuMjcyLTI1Mi4xODItMTU2LjI3MkMxMTguMzM0IDkwLjk5OCA3LjM4MyAyNDAuODggMi44MTMgMjQ3LjI3YTE0Ljk1NSAxNC45NTUgMCAwIDAgMCAxNy40NmM0LjU3IDYuMzkgMTE1LjUyMSAxNTYuMjcxIDI1NC4xOTMgMTU2LjI3MSAxMzguNjYxIDAgMjQ3LjYxMi0xNDkuODgxIDI1Mi4xODItMTU2LjI3MmExNC45NTQgMTQuOTU0IDAgMCAwIDAtMTcuNDU5ek0yNTcuMDA2IDM2MWMtNTcuODkxIDAtMTA3LjAwMS00Ny4xMS0xMDcuMDAxLTEwNS4wMDFzNDkuMTEtMTA1LjAwMSAxMDcuMDAxLTEwNS4wMDEgMTA1LjAwMSA0Ny4xMSAxMDUuMDAxIDEwNS4wMDFTMzE0Ljg5NyAzNjEgMjU3LjAwNiAzNjF6IiBmaWxsPSIjZmZmZmZmIi8+PHBhdGggZD0iTTI1Ny4wMDYgMjEwLjk5OWMtMjQuODIgMC00NyAyMC4xOS00NyA0NSAwIDI0LjgyIDIyLjE4IDQ1IDQ3IDQ1IDI0LjgxIDAgNDUtMjAuMTggNDUtNDUgMC0yNC44MS0yMC4xOS00NS00NS00NXoiIGZpbGw9IiNmZmZmZmYiLz48L2c+PC9zdmc+"
+                            alt=""></div>
+                    <h3>Visión</h3>
+                    <p>Convertirnos en una comunidad educativa bilingüe con fundamentos cristianos reconocida por formar
+                        estudiantes con pensamiento crítico, carácter íntegro y espíritu emprendedor, capaces de
+                        transformar su entorno con determinación, liderazgo y fe.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== VALORES ===== -->
+    <section class="values" id="valores">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <span class="section-eyebrow">Lo que nos guía</span>
+                <h2 class="section-title">Nuestros Valores</h2>
+            </div>
+            <div class="values-grid">
+                <div class="value-card reveal">
+                    <div class="about-icon"><img
+                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB4PSIwIiB5PSIwIiB2aWV3Qm94PSIwIDAgNTEyIDUxMi4wMDEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTIiIHhtbDpzcGFjZT0icHJlc2VydmUiIGNsYXNzPSIiPjxnPjxwYXRoIGQ9Ik0yNTYuMDAxIDQ3Ny40MDdjLTIuNTkgMC01LjE3OS0uNjY5LTcuNDk5LTIuMDA5LTIuNTItMS40NTQtNjIuMzkxLTM2LjIxNi0xMjMuMTIxLTg4LjU5NC0zNS45OTQtMzEuMDQzLTY0LjcyNi02MS44MzMtODUuMzk2LTkxLjUxM0MxMy4yMzcgMjU2Ljg4NS0uMjE0IDIxOS45NDMuMDAzIDE4NS40OWMuMjU0LTQwLjA5IDE0LjYxMy03Ny43OTIgNDAuNDM1LTEwNi4xNjIgMjYuMjU4LTI4Ljg0OCA2MS4zLTQ0LjczNCA5OC42NzMtNDQuNzM0IDQ3Ljg5NyAwIDkxLjY4OCAyNi44MyAxMTYuODkxIDY5LjMzMiAyNS4yMDMtNDIuNTAxIDY4Ljk5NC02OS4zMzIgMTE2Ljg5MS02OS4zMzIgMzUuMzA4IDAgNjguOTk1IDE0LjMzNCA5NC44NTkgNDAuMzYyIDI4LjM4NCAyOC41NjMgNDQuNTExIDY4LjkyMSA0NC4yNDcgMTEwLjcyNC0uMjE4IDM0LjM5My0xMy45MjEgNzEuMjc5LTQwLjcyOCAxMDkuNjMyLTIwLjczNCAyOS42NjUtNDkuNDI2IDYwLjQ0MS04NS4yNzkgOTEuNDc1LTYwLjUwOCA1Mi4zNzMtMTE5Ljk0OSA4Ny4xMzQtMTIyLjQ1IDg4LjU4OGExNS4wMDggMTUuMDA4IDAgMCAxLTcuNTQxIDIuMDMyeiIgZmlsbD0iI2ZmZmZmZiIvPjwvZz48L3N2Zz4="
+                            alt=""></div>
+                    <h3>Fe</h3>
+                    <p>Guiados por principios cristianos</p>
+                </div>
+                <div class="value-card reveal">
+                    <div class="about-icon"><img
+                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB4PSIwIiB5PSIwIiB2aWV3Qm94PSIwIDAgNjQgNjQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTIiIHhtbDpzcGFjZT0icHJlc2VydmUiIGNsYXNzPSIiPjxnPjxnIGRhdGEtbmFtZT0iMjIgVHJvcGh5Ij48cGF0aCBkPSJNNDYgNTBoLTF2LTFhMyAzIDAgMCAwLTMtM2gtLjg2MWwuNjM1LTQuODcxYTEgMSAwIDAgMC0xLjk4My0uMjU4TDM5LjEyMiA0NkgyNC44NThMMTkuMTY0IDguOTg4YTYwLjY0MyA2MC42NDMgMCAwIDAgMjUuNi02LjI1M2wtNC40NTIgMzQuMTM2YTEgMSAwIDAgMCAxLjk4NC4yNThsNC43LTM2QTEgMSAwIDAgMCA0NS41NTMuMTA1bC0xLjQ3OC43NEE1OC42MTcgNTguNjE3IDAgMCAxIDE4IDdhMSAxIDAgMCAwLS45ODggMS4xNTJMMjIuODM0IDQ2SDIyYTMgMyAwIDAgMC0zIDN2MWgtMWEzIDMgMCAwIDAtMyAzdjEwYTEgMSAwIDAgMCAxIDFoMzJhMSAxIDAgMCAwIDEtMVY1M2EzIDMgMCAwIDAtMy0zem0xIDEySDE3di05YTEgMSAwIDAgMSAxLTFoNmExIDEgMCAwIDAgMC0yaC0zdi0xYTEgMSAwIDAgMSAxLTFoMjBhMSAxIDAgMCAxIDEgMXYxSDI4YTEgMSAwIDAgMCAwIDJoMThhMSAxIDAgMCAxIDEgMXoiIGZpbGw9IiNmZmZmZmYiLz48L2c+PC9nPjwvc3ZnPg=="
+                            alt=""></div>
+                    <h3>Integridad</h3>
+                    <p>Honestidad en cada acción</p>
+                </div>
+                <div class="value-card reveal">
+                    <div class="about-icon"><img
+                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB4PSIwIiB5PSIwIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgY2xhc3M9IiI+PGc+PHBhdGggZD0iTTEzOS4zMjUgMTE4LjExNCA5Ni45MDMgNzUuNjkyYy01Ljg1OS01Ljg1OS0xNS4zNTItNS44NTktMjEuMjExIDBzLTUuODU5IDE1LjM1MiAwIDIxLjIxMWw0Mi40MjIgNDIuNDIyYzUuODU5IDUuODU5IDE1LjM1MiA1Ljg1OSAyMS4yMTEgMCA1Ljg1OS01Ljg1OSA1Ljg1OS0xNS4zNTIgMC0yMS4yMTF6TTc2IDI0MUgxNWMtOC4yOTEgMC0xNSA2LjcwOS0xNSAxNXM2LjcwOSAxNSAxNSAxNWg2MWM4LjI5MSAwIDE1LTYuNzA5IDE1LTE1cy02LjcwOS0xNS0xNS0xNXpNNDk3IDI0MWgtNjFjLTguMjkxIDAtMTUgNi43MDktMTUgMTVzNi43MDkgMTUgMTUgMTVoNjFjOC4yOTEgMCAxNS02LjcwOSAxNS0xNXMtNi43MDktMTUtMTUtMTV6TTQzNi4zMDggNzUuNjkyYy01Ljg1OS01Ljg1OS0xNS4zNTItNS44NTktMjEuMjExIDBsLTQyLjQyMiA0Mi40MjJjLTUuODU5IDUuODU5LTUuODU5IDE1LjM1MiAwIDIxLjIxMSA1Ljg1OSA1Ljg1OSAxNS4zNTIgNS44NTkgMjEuMjExIDBsNDIuNDIyLTQyLjQyMmM1Ljg1OS01Ljg1OSA1Ljg1OS0xNS4zNTEgMC0yMS4yMTF6TTI1NiAwYy04LjI5MSAwLTE1IDYuNzA5LTE1IDE1djYxYzAgOC4yOTEgNi43MDkgMTUgMTUgMTVzMTUtNi43MDkgMTUtMTVWMTVjMC04LjI5MS02LjcwOS0xNS0xNS0xNXpNMzQwIDE1MC4wOTljLTMyLjY5OS0yNS44LTc1LTM1LjA5OS0xMTYuNC0yNS4xOTktNDggMTEuMS04Ni42OTkgNDkuMTk5LTk4LjQgOTYuOS0xMS43IDQ3Ljk5OSAxLjggOTYuNTk5IDM2LjI5OSAxMzAuNDk5QzE3My44IDM2NC42IDE4MSAzODMuODk5IDE4MSA0MDMuN3YzLjNjMCA4LjM5OSA2LjU5OSAxNSAxNSAxNWgxMjBjOC40MDEgMCAxNS02LjYwMSAxNS0xNXYtMy4zYzAtMTkuNTAxIDcuNS0zOS40MDEgMjAuNy01Mi4zMDFDMzc2LjkwMSAzMjUuODk5IDM5MSAyOTIgMzkxIDI1NmMwLTQxLjQtMTguNi04MC4xMDEtNTEtMTA1LjkwMXpNMjU2IDIxMWMtMjIuNjMgMC0zOS4xMDQgMTUuMDExLTQzLjQxOCAzMi4zODgtMS45NjMgNy45MDMtOS45MTUgMTIuOTQ3LTE4LjE3OSAxMC45NTctOC4wMjctMS45OTItMTIuOTM1LTEwLjEzNy0xMC45NDItMTguMTY0IDcuNDMyLTMwIDM1LjYxLTU1LjE4MSA3Mi41MzktNTUuMTgxIDguMjkxIDAgMTUgNi43MDkgMTUgMTVzLTYuNzA5IDE1LTE1IDE1ek0xOTYgNDUydjE1YzAgMjQuODE0IDIwLjE4NiA0NSA0NSA0NWgzMGMyNC44MTQgMCA0NS0yMC4xODYgNDUtNDV2LTE1SDE5NnoiIGZpbGw9IiNmZmZmZmYiLz48L2c+PC9zdmc+"
+                            alt=""></div>
+                    <h3>Pensamiento Crítico</h3>
+                    <p>Análisis y reflexión constante</p>
+                </div>
+                <div class="value-card reveal">
+                    <div class="about-icon"><img
+                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB4PSIwIiB5PSIwIiB2aWV3Qm94PSIwIDAgMzIgMzIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTIiIHhtbDpzcGFjZT0icHJlc2VydmUiIGNsYXNzPSIiPjxnPjxwYXRoIGQ9Im0yOS45MTEgMTMuNzUtNi4yMjkgNi4wNzIgMS40NzEgOC41NzZhMSAxIDAgMCAxLTEuNDUxIDEuMDU0TDE2IDI1LjQwM2wtNy43MDEgNC4wNDhhMSAxIDAgMCAxLTEuNDUxLTEuMDU0bDEuNDcxLTguNTc2LTYuMjMtNi4wNzFhMSAxIDAgMCAxIC41NTUtMS43MDZsOC42MDktMS4yNSAzLjg1LTcuODAyYy4zMzctLjY4MyAxLjQ1Ny0uNjgzIDEuNzk0IDBsMy44NSA3LjgwMiA4LjYwOSAxLjI1YTEuMDAyIDEuMDAyIDAgMCAxIC41NTUgMS43MDZ6IiBmaWxsPSIjZmZmZmZmIi8+PC9nPjwvc3ZnPg=="
+                            alt=""></div>
+                    <h3>Excelencia</h3>
+                    <p>Mejora continua en todo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FILOSOFÍA ===== -->
+    <section class="philosophy" id="filosofia">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <span class="section-eyebrow">Cinco pilares</span>
+                <h2 class="section-title">Nuestra Filosofía</h2>
+                <p class="section-sub">En Blue Lion Academy creemos que cada estudiante necesita un ambiente de apoyo
+                    hacia la excelencia académica, emocional, social y de carácter.</p>
+            </div>
+            <div class="philosophy-grid">
+                <div class="philosophy-card reveal">
+                    <span class="philosophy-num">01</span>
+                    <h3>Cristo como fundamento</h3>
+                    <p>La fe guía nuestra enseñanza, nuestras decisiones y la manera en que acompañamos a cada
+                        estudiante, inspirando propósito y responsabilidad.</p>
+                </div>
+                <div class="philosophy-card reveal">
+                    <span class="philosophy-num">02</span>
+                    <h3>Pensamiento crítico para la vida</h3>
+                    <p>Fomentamos análisis, reflexión y cuestionamiento respetuoso, para que los estudiantes evalúen
+                        información y tomen decisiones sabias.</p>
+                </div>
+                <div class="philosophy-card reveal">
+                    <span class="philosophy-num">03</span>
+                    <h3>Educación bilingüe para un mundo global</h3>
+                    <p>Desarrollamos el dominio del inglés y del español de forma natural, preparando a nuestros
+                        estudiantes para liderar en un entorno internacional.</p>
+                </div>
+                <div class="philosophy-card reveal">
+                    <span class="philosophy-num">04</span>
+                    <h3>Creatividad, emprendimiento y estrategia</h3>
+                    <p>Promovemos proyectos y desafíos que despiertan el espíritu creador y la capacidad de transformar
+                        ideas en acciones.</p>
+                </div>
+                <div class="philosophy-card reveal">
+                    <span class="philosophy-num">05</span>
+                    <h3>Formación integral y personalizada</h3>
+                    <p>Cada estudiante es único. Acompañamos su crecimiento académico, emocional y espiritual en un
+                        ambiente seguro y motivador.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PERFIL DEL ESTUDIANTE ===== -->
+    <section class="student-profile" id="perfil">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <span class="section-eyebrow">A quién formamos</span>
+                <h2 class="section-title">Perfil del Estudiante Blue Lion</h2>
+            </div>
+            <div class="profile-grid">
+                <div class="profile-item reveal">
+                    <div class="profile-check"><img
+                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB4PSIwIiB5PSIwIiB2aWV3Qm94PSIwIDAgNDA4LjU3NiA0MDguNTc2IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiBjbGFzcz0iIj48Zz48cGF0aCBkPSJNMjA0LjI4OCAwQzkxLjY0OCAwIDAgOTEuNjQ4IDAgMjA0LjI4OHM5MS42NDggMjA0LjI4OCAyMDQuMjg4IDIwNC4yODggMjA0LjI4OC05MS42NDggMjA0LjI4OC0yMDQuMjg4UzMxNi45MjggMCAyMDQuMjg4IDB6bTExNC4xNzYgMTUwLjUyOC0xMzAuNTYgMTI5LjUzNmMtNy42OCA3LjY4LTE5Ljk2OCA4LjE5Mi0yOC4xNi41MTJMOTAuNjI0IDIxNy42Yy04LjE5Mi03LjY4LTguNzA0LTIwLjQ4LTEuNTM2LTI4LjY3MiA3LjY4LTguMTkyIDIwLjQ4LTguNzA0IDI4LjY3Mi0xLjAyNGw1NC43ODQgNTAuMTc2TDI4OS4yOCAxMjEuMzQ0YzguMTkyLTguMTkyIDIwLjk5Mi04LjE5MiAyOS4xODQgMHM4LjE5MiAyMC45OTIgMCAyOS4xODR6IiBmaWxsPSIjZmZmZmZmIi8+PC9nPjwvc3ZnPg=="
+                            alt=""></div>
+                    <div>
+                        <h4>Crítico y Analítico</h4>
+                        <p>Piensa con profundidad, cuestiona con respeto y propone soluciones creativas a problemas
+                            reales.</p>
+                    </div>
+                </div>
+                <div class="profile-item reveal">
+                    <div class="profile-check"><img
+                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB4PSIwIiB5PSIwIiB2aWV3Qm94PSIwIDAgNDA4LjU3NiA0MDguNTc2IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiBjbGFzcz0iIj48Zz48cGF0aCBkPSJNMjA0LjI4OCAwQzkxLjY0OCAwIDAgOTEuNjQ4IDAgMjA0LjI4OHM5MS42NDggMjA0LjI4OCAyMDQuMjg4IDIwNC4yODggMjA0LjI4OC05MS42NDggMjA0LjI4OC0yMDQuMjg4UzMxNi45MjggMCAyMDQuMjg4IDB6bTExNC4xNzYgMTUwLjUyOC0xMzAuNTYgMTI5LjUzNmMtNy42OCA3LjY4LTE5Ljk2OCA4LjE5Mi0yOC4xNi41MTJMOTAuNjI0IDIxNy42Yy04LjE5Mi03LjY4LTguNzA0LTIwLjQ4LTEuNTM2LTI4LjY3MiA3LjY4LTguMTkyIDIwLjQ4LTguNzA0IDI4LjY3Mi0xLjAyNGw1NC43ODQgNTAuMTc2TDI4OS4yOCAxMjEuMzQ0YzguMTkyLTguMTkyIDIwLjk5Mi04LjE5MiAyOS4xODQgMHM4LjE5MiAyMC45OTIgMCAyOS4xODR6IiBmaWxsPSIjZmZmZmZmIi8+PC9nPjwvc3ZnPg=="
+                            alt=""></div>
+                    <div>
+                        <h4>Bilingüe y Global</h4>
+                        <p>Se comunica eficazmente en inglés y español, con una visión internacional y abierta al mundo.
+                        </p>
+                    </div>
+                </div>
+                <div class="profile-item reveal">
+                    <div class="profile-check"><img
+                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB4PSIwIiB5PSIwIiB2aWV3Qm94PSIwIDAgNDA4LjU3NiA0MDguNTc2IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiBjbGFzcz0iIj48Zz48cGF0aCBkPSJNMjA0LjI4OCAwQzkxLjY0OCAwIDAgOTEuNjQ4IDAgMjA0LjI4OHM5MS42NDggMjA0LjI4OCAyMDQuMjg4IDIwNC4yODggMjA0LjI4OC05MS42NDggMjA0LjI4OC0yMDQuMjg4UzMxNi45MjggMCAyMDQuMjg4IDB6bTExNC4xNzYgMTUwLjUyOC0xMzAuNTYgMTI5LjUzNmMtNy42OCA3LjY4LTE5Ljk2OCA4LjE5Mi0yOC4xNi41MTJMOTAuNjI0IDIxNy42Yy04LjE5Mi03LjY4LTguNzA0LTIwLjQ4LTEuNTM2LTI4LjY3MiA3LjY4LTguMTkyIDIwLjQ4LTguNzA0IDI4LjY3Mi0xLjAyNGw1NC43ODQgNTAuMTc2TDI4OS4yOCAxMjEuMzQ0YzguMTkyLTguMTkyIDIwLjk5Mi04LjE5MiAyOS4xODQgMHM4LjE5MiAyMC45OTIgMCAyOS4xODR6IiBmaWxsPSIjZmZmZmZmIi8+PC9nPjwvc3ZnPg=="
+                            alt=""></div>
+                    <div>
+                        <h4>Emprendedor y Creativo</h4>
+                        <p>Diseña proyectos, crea ideas y demuestra iniciativa para innovar y transformar su entorno.
+                        </p>
+                    </div>
+                </div>
+                <div class="profile-item reveal">
+                    <div class="profile-check"><img
+                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB4PSIwIiB5PSIwIiB2aWV3Qm94PSIwIDAgNDA4LjU3NiA0MDguNTc2IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiBjbGFzcz0iIj48Zz48cGF0aCBkPSJNMjA0LjI4OCAwQzkxLjY0OCAwIDAgOTEuNjQ4IDAgMjA0LjI4OHM5MS42NDggMjA0LjI4OCAyMDQuMjg4IDIwNC4yODggMjA0LjI4OC05MS42NDggMjA0LjI4OC0yMDQuMjg4UzMxNi45MjggMCAyMDQuMjg4IDB6bTExNC4xNzYgMTUwLjUyOC0xMzAuNTYgMTI5LjUzNmMtNy42OCA3LjY4LTE5Ljk2OCA4LjE5Mi0yOC4xNi41MTJMOTAuNjI0IDIxNy42Yy04LjE5Mi03LjY4LTguNzA0LTIwLjQ4LTEuNTM2LTI4LjY3MiA3LjY4LTguMTkyIDIwLjQ4LTguNzA0IDI4LjY3Mi0xLjAyNGw1NC43ODQgNTAuMTc2TDI4OS4yOCAxMjEuMzQ0YzguMTkyLTguMTkyIDIwLjk5Mi04LjE5MiAyOS4xODQgMHM4LjE5MiAyMC45OTIgMCAyOS4xODR6IiBmaWxsPSIjZmZmZmZmIi8+PC9nPjwvc3ZnPg=="
+                            alt=""></div>
+                    <div>
+                        <h4>Líder con Valores Cristianos</h4>
+                        <p>Actúa con fe, ética, servicio y respeto, siendo ejemplo dentro y fuera de la comunidad.</p>
+                    </div>
+                </div>
+                <div class="profile-item reveal">
+                    <div class="profile-check"><img
+                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB4PSIwIiB5PSIwIiB2aWV3Qm94PSIwIDAgNDA4LjU3NiA0MDguNTc2IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiBjbGFzcz0iIj48Zz48cGF0aCBkPSJNMjA0LjI4OCAwQzkxLjY0OCAwIDAgOTEuNjQ4IDAgMjA0LjI4OHM5MS42NDggMjA0LjI4OCAyMDQuMjg4IDIwNC4yODggMjA0LjI4OC05MS42NDggMjA0LjI4OC0yMDQuMjg4UzMxNi45MjggMCAyMDQuMjg4IDB6bTExNC4xNzYgMTUwLjUyOC0xMzAuNTYgMTI5LjUzNmMtNy42OCA3LjY4LTE5Ljk2OCA4LjE5Mi0yOC4xNi41MTJMOTAuNjI0IDIxNy42Yy04LjE5Mi03LjY4LTguNzA0LTIwLjQ4LTEuNTM2LTI4LjY3MiA3LjY4LTguMTkyIDIwLjQ4LTguNzA0IDI4LjY3Mi0xLjAyNGw1NC43ODQgNTAuMTc2TDI4OS4yOCAxMjEuMzQ0YzguMTkyLTguMTkyIDIwLjk5Mi04LjE5MiAyOS4xODQgMHM4LjE5MiAyMC45OTIgMCAyOS4xODR6IiBmaWxsPSIjZmZmZmZmIi8+PC9nPjwvc3ZnPg=="
+                            alt=""></div>
+                    <div>
+                        <h4>Resiliente y Estratégico</h4>
+                        <p>Enfrenta retos con valentía, organiza sus ideas y planifica para alcanzar metas con
+                            sabiduría.</p>
+                    </div>
+                </div>
+                <div class="profile-item reveal">
+                    <div class="profile-check"><img
+                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB4PSIwIiB5PSIwIiB2aWV3Qm94PSIwIDAgNDA4LjU3NiA0MDguNTc2IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiBjbGFzcz0iIj48Zz48cGF0aCBkPSJNMjA0LjI4OCAwQzkxLjY0OCAwIDAgOTEuNjQ4IDAgMjA0LjI4OHM5MS42NDggMjA0LjI4OCAyMDQuMjg4IDIwNC4yODggMjA0LjI4OC05MS42NDggMjA0LjI4OC0yMDQuMjg4UzMxNi45MjggMCAyMDQuMjg4IDB6bTExNC4xNzYgMTUwLjUyOC0xMzAuNTYgMTI5LjUzNmMtNy42OCA3LjY4LTE5Ljk2OCA4LjE5Mi0yOC4xNi41MTJMOTAuNjI0IDIxNy42Yy04LjE5Mi03LjY4LTguNzA0LTIwLjQ4LTEuNTM2LTI4LjY3MiA3LjY4LTguMTkyIDIwLjQ4LTguNzA0IDI4LjY3Mi0xLjAyNGw1NC43ODQgNTAuMTc2TDI4OS4yOCAxMjEuMzQ0YzguMTkyLTguMTkyIDIwLjk5Mi04LjE5MiAyOS4xODQgMHM4LjE5MiAyMC45OTIgMCAyOS4xODR6IiBmaWxsPSIjZmZmZmZmIi8+PC9nPjwvc3ZnPg=="
+                            alt=""></div>
+                    <div>
+                        <h4>Comprometido con la Excelencia</h4>
+                        <p>Busca aprender, mejorar y dar lo mejor de sí en cada área de su vida.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== OFERTA ACADÉMICA ===== -->
+    <section class="academic-offer" id="oferta-academica">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <span class="section-eyebrow">Un camino que se eleva</span>
+                <h2 class="section-title">Oferta Académica</h2>
+                <p class="section-sub">Acompañamos a cada estudiante desde sus primeros pasos hasta el desarrollo de
+                    bases sólidas para su futuro académico.</p>
+            </div>
+
+            <div class="rise-track">
+                <div class="rise-step reveal">
+                    <div class="rise-dot"></div>
+                    <div class="rise-card">
+                        <h3>Day Care</h3>
+                        <p>Atención integral en un ambiente seguro, estimulante y lleno de amor, enfocado en el
+                            desarrollo emocional y social.</p>
+                    </div>
+                </div>
+                <div class="rise-step reveal">
+                    <div class="rise-dot"></div>
+                    <div class="rise-card">
+                        <h3>Pre Kinder</h3>
+                        <p>Estimulación temprana a través del juego, fomentando la curiosidad, el lenguaje y la
+                            interacción social.</p>
+                    </div>
+                </div>
+                <div class="rise-step reveal">
+                    <div class="rise-dot"></div>
+                    <div class="rise-card">
+                        <h3>Kinder</h3>
+                        <p>Desarrollo de habilidades cognitivas, motrices y emocionales con un enfoque bilingüe.</p>
+                    </div>
+                </div>
+                <div class="rise-step reveal">
+                    <div class="rise-dot"></div>
+                    <div class="rise-card">
+                        <h3>Preescolar</h3>
+                        <p>Bases académicas sólidas que fortalecen la lectura, escritura y pensamiento lógico.</p>
+                    </div>
+                </div>
+                <div class="rise-step reveal">
+                    <div class="rise-dot"></div>
+                    <div class="rise-card">
+                        <h3>1° a 3° Grado</h3>
+                        <p>Formación académica integral con pensamiento crítico, valores cristianos y educación
+                            bilingüe.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== INSTALACIONES ===== -->
+    <section class="facilities" id="instalaciones">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <span class="section-eyebrow">Nuestro campus</span>
+                <h2 class="section-title">Instalaciones</h2>
+                <p class="section-sub">Un campus diseñado para inspirar el aprendizaje, fomentar la creatividad y crear
+                    un ambiente seguro donde cada estudiante pueda crecer.</p>
+            </div>
+            <div class="carousel reveal" id="facilitiesCarousel" aria-roledescription="carrusel"
+                aria-label="Fotos del campus">
+                <div class="carousel-viewport">
+                    <div class="carousel-track" id="carouselTrack">
+                        <figure class="carousel-slide">
+                            <img src="./img/Bla1.jpg" alt="Instalaciones de Blue Lion Academy" loading="lazy">
+                        </figure>
+                        <figure class="carousel-slide">
+                            <img src="./img/Bla2.jpg" alt="Instalaciones de Blue Lion Academy" loading="lazy">
+                        </figure>
+                        <figure class="carousel-slide">
+                            <img src="./img/Bla3.jpg" alt="Instalaciones de Blue Lion Academy" loading="lazy">
+                        </figure>
+                        <figure class="carousel-slide">
+                            <img src="./img/Bla4.jpg" alt="Instalaciones de Blue Lion Academy" loading="lazy">
+                        </figure>
+                        <figure class="carousel-slide">
+                            <img src="./img/Bla5.jpg" alt="Instalaciones de Blue Lion Academy" loading="lazy">
+                        </figure>
+                        <figure class="carousel-slide">
+                            <img src="./img/Bla6.jpg" alt="Instalaciones de Blue Lion Academy" loading="lazy">
+                        </figure>
+                    </div>
+                </div>
+
+                <button class="carousel-arrow prev" id="carouselPrev" aria-label="Foto anterior">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <button class="carousel-arrow next" id="carouselNext" aria-label="Foto siguiente">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+
+                <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Seleccionar foto"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACTO ===== -->
+    <section class="contact" id="contacto">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <span class="section-eyebrow">Hablemos</span>
+                <h2 class="section-title">Contáctanos</h2>
+                <p class="section-sub">¿Interesado en formar parte de Blue Lion Academy? Estamos aquí para resolver
+                    todas tus dudas.</p>
+            </div>
+
+            <div class="contact-methods">
+                <div class="contact-method reveal">
+                    <div class="contact-method-icon">✉️</div>
+                    <h4>Email</h4>
+                    <p>info@bluelionacademy.net</p>
+                </div>
+                <div class="contact-method reveal">
+                    <div class="contact-method-icon">📞</div>
+                    <h4>Teléfono</h4>
+                    <p>+507 6972-6448</p>
+                </div>
+                <div class="contact-method reveal">
+                    <div class="contact-method-icon">📍</div>
+                    <h4>Ubicación</h4>
+                    <p>Barriada Santa Sofía, Vía 24 de Diciembre, Ciudad de Panamá</p>
+                </div>
+            </div>
+
+            <div class="contact-layout">
+                <div class="contact-aside reveal">
+                    <div class="facility-image"><img src="img/Bla5.jpg" alt="Estudiantes de Blue Lion Academy"
+                            loading="lazy"></div>
+                    <h3>Agenda una visita</h3>
+                    <p>Conoce el campus, el equipo docente y nuestro modelo bilingüe con fundamentos cristianos de
+                        cerca. Cuéntanos el grado de interés de tu hijo o hija y te contactaremos a la brevedad.</p>
+                </div>
+
+                <form class="contact-form reveal" action="send.php" method="POST">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo*</label>
+                        <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="+507 1234-5678">
+                    </div>
+                    <div class="form-group">
+                        <label for="grado">Grado de interés</label>
+                        <select id="grado" name="grado">
+                            <option value="">Selecciona una opción</option>
+                            <option value="daycare">Day Care</option>
+                            <option value="prekinder">Pre Kinder</option>
+                            <option value="kinder">Kinder</option>
+                            <option value="preescolar">Preescolar</option>
+                            <option value="primaria">1° a 3° Grado</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje*</label>
+                        <textarea id="mensaje" name="mensaje" required
+                            placeholder="Cuéntanos cómo podemos ayudarte..."></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Enviar mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Blue Lion Academy</h3>
+                    <p>Una institución educativa comprometida con la excelencia académica y la formación de líderes con
+                        propósito.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces rápidos</h3>
+                    <a href="#inicio">Inicio</a>
+                    <a href="#nosotros">Nosotros</a>
+                    <a href="#filosofia">Filosofía</a>
+                    <a href="#contacto">Contacto</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <a href="https://www.instagram.com/bluelionacademy/" target="_blank" rel="noopener">Instagram:
+                        @bluelionacademy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Blue Lion Academy. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== WHATSAPP FLOTANTE ===== -->
+    <a href="https://wa.me/50769726448" class="whatsapp-float" target="_blank" rel="noopener"
+        aria-label="Escríbenos por WhatsApp">
+        <img src="img/whatsap.png" alt="">
     </a>
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
-      <span></span><span></span><span></span>
-    </button>
-
-    <ul class="nav-menu" id="navMenu">
-      <li><a href="#inicio">Inicio</a></li>
-      <li><a href="#nosotros">Nosotros</a></li>
-      <li><a href="#filosofia">Filosofía</a></li>
-      <li><a href="#oferta-academica">Oferta Académica</a></li>
-      <li><a href="#instalaciones">Instalaciones</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-      <li><a href="#contacto" class="btn-primary">Aplicar ahora</a></li>
-    </ul>
-  </nav>
-</header>
-
-<!-- ===== HERO ===== -->
-<section class="hero" id="inicio">
-  <div class="hero-inner">
-    <span class="eyebrow">Educación bilingüe · fundamentos cristianos</span>
-    <h1>Blue Lion Academy</h1>
-    <p class="tagline">Leaders with Purpose. Minds that Rise.</p>
-    <p class="lede">Acompañamos a cada estudiante desde Day Care hasta 3er grado con un modelo bilingüe y cristiano que forma pensamiento crítico, carácter y liderazgo.</p>
-    <div class="hero-buttons">
-      <a href="#contacto" class="btn-primary" style="background:var(--gold); color:var(--navy-900) !important;">Conoce nuestra propuesta</a>
-      <a href="#nosotros" class="btn-secondary">Sobre nosotros</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== SOBRE NOSOTROS ===== -->
-<section class="about" id="nosotros">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="section-eyebrow">Quiénes somos</span>
-      <h2 class="section-title">Sobre Nosotros</h2>
-    </div>
-    <div class="about-grid">
-      <div class="about-card reveal">
-        <div class="about-icon"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB4PSIwIiB5PSIwIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgY2xhc3M9IiI+PGc+PHBhdGggZD0ibTQ0MS45NSA5MS43MDEtMjIuOTI1LTIyLjkyNVYwbC03MS4zMjMgNzMuODcxLTUuMDk0IDU4LjU4Ny03My44NzEgNzMuODcxaC0xMi43MzZjLTI4LjAyIDAtNTAuOTQ1IDIyLjkyNS01MC45NDUgNTAuOTQ1czIyLjkyNSA1MC45NDUgNTAuOTQ1IDUwLjk0NSA1MC45NDUtMjIuOTI1IDUwLjk0NS01MC45NDVjMC01LjA5NCAwLTcuNjQyLTIuNTQ3LTEyLjczNmw3My44NzEtNzMuODcxIDU4LjU4Ny01LjA5NSA3My44NzEtNzMuODcxSDQ0MS45NXoiIGZpbGw9IiNmZmZmZmYiLz48cGF0aCBkPSJNMzkzLjU1MiAxOTMuNTkyaC0yLjU0N2wtMzUuNjYyIDM4LjIwOWMyLjU0NyA3LjY0MiAyLjU0NyAxNy44MzEgMi41NDcgMjUuNDczIDAgNTYuMDQtNDUuODUxIDEwMS44OTEtMTAxLjg5MSAxMDEuODkxcy0xMDEuODkxLTQ1Ljg1MS0xMDEuODkxLTEwMS44OTFTMTk5Ljk2IDE1NS4zODMgMjU2IDE1NS4zODNjMTAuMTg5IDAgMTcuODMxIDIuNTQ3IDI1LjQ3MyAyLjU0N2wzOC4yMDktMzguMjA5di0yLjU0N2MtMjAuMzc4LTcuNjQyLTQwLjc1Ni0xMi43MzYtNjMuNjgyLTEyLjczNi04NC4wNiAwLTE1Mi44MzYgNjguNzc2LTE1Mi44MzYgMTUyLjgzNlMxNzEuOTQgNDEwLjEwOSAyNTYgNDEwLjEwOXMxNTIuODM2LTY4Ljc3NiAxNTIuODM2LTE1Mi44MzZjMC0yMi45MjUtNS4wOTUtNDMuMzAzLTE1LjI4NC02My42ODF6IiBmaWxsPSIjZmZmZmZmIi8+PHBhdGggZD0ibTQ4Ny44MDEgMTUyLjgzNi0zOC4yMDkgMzUuNjYyYzUuMDk1IDIwLjM3OCAxMC4xODkgNDMuMzA0IDEwLjE4OSA2OC43NzYgMCAxMTIuMDgtOTEuNzAxIDIwMy43ODEtMjAzLjc4MSAyMDMuNzgxUzUyLjIxOSAzNjkuMzUzIDUyLjIxOSAyNTcuMjc0IDE0My45MiA1My40OTMgMjU2IDUzLjQ5M2MyMi45MjUgMCA0NS44NTEgNS4wOTUgNjguNzc2IDEyLjczNnYtMi41NDdsMzguMjA5LTM4LjIwOUMzMjkuODcxIDEwLjE4OSAyOTQuMjA5IDIuNTQ3IDI1NiAyLjU0NyAxMTUuOSAyLjU0NyAxLjI3NCAxMTcuMTc0IDEuMjc0IDI1Ny4yNzRTMTE1LjkgNTEyIDI1NiA1MTJzMjU0LjcyNi0xMTQuNjI3IDI1NC43MjYtMjU0LjcyNmMwLTM4LjIwOS03LjY0MS03My44NzEtMjIuOTI1LTEwNC40Mzh6IiBmaWxsPSIjZmZmZmZmIi8+PC9nPjwvc3ZnPg==" alt=""></div>
-        <h3>Misión</h3>
-        <p>Educar y guiar integralmente a cada estudiante mediante un modelo bilingüe y cristiano que promueva el pensamiento crítico, el descubrimiento de sus talentos y el desarrollo de habilidades estratégicas y creativas. Inspiramos a nuestros alumnos a ser líderes con propósito, comprometidos con hacer la diferencia en la sociedad y reflejar valores que honren a Dios.</p>
-      </div>
-      <div class="about-card reveal">
-        <div class="about-icon"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB4PSIwIiB5PSIwIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgY2xhc3M9IiI+PGc+PHBhdGggZD0iTTUwOS4xODggMjQ3LjI3Yy00LjU3LTYuMzktMTEzLjUyMS0xNTYuMjcyLTI1Mi4xODItMTU2LjI3MkMxMTguMzM0IDkwLjk5OCA3LjM4MyAyNDAuODggMi44MTMgMjQ3LjI3YTE0Ljk1NSAxNC45NTUgMCAwIDAgMCAxNy40NmM0LjU3IDYuMzkgMTE1LjUyMSAxNTYuMjcxIDI1NC4xOTMgMTU2LjI3MSAxMzguNjYxIDAgMjQ3LjYxMi0xNDkuODgxIDI1Mi4xODItMTU2LjI3MmExNC45NTQgMTQuOTU0IDAgMCAwIDAtMTcuNDU5ek0yNTcuMDA2IDM2MWMtNTcuODkxIDAtMTA3LjAwMS00Ny4xMS0xMDcuMDAxLTEwNS4wMDFzNDkuMTEtMTA1LjAwMSAxMDcuMDAxLTEwNS4wMDEgMTA1LjAwMSA0Ny4xMSAxMDUuMDAxIDEwNS4wMDFTMzE0Ljg5NyAzNjEgMjU3LjAwNiAzNjF6IiBmaWxsPSIjZmZmZmZmIi8+PHBhdGggZD0iTTI1Ny4wMDYgMjEwLjk5OWMtMjQuODIgMC00NyAyMC4xOS00NyA0NSAwIDI0LjgyIDIyLjE4IDQ1IDQ3IDQ1IDI0LjgxIDAgNDUtMjAuMTggNDUtNDUgMC0yNC44MS0yMC4xOS00NS00NS00NXoiIGZpbGw9IiNmZmZmZmYiLz48L2c+PC9zdmc+" alt=""></div>
-        <h3>Visión</h3>
-        <p>Convertirnos en una comunidad educativa bilingüe con fundamentos cristianos reconocida por formar estudiantes con pensamiento crítico, carácter íntegro y espíritu emprendedor, capaces de transformar su entorno con determinación, liderazgo y fe.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== VALORES ===== -->
-<section class="values" id="valores">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="section-eyebrow">Lo que nos guía</span>
-      <h2 class="section-title">Nuestros Valores</h2>
-    </div>
-    <div class="values-grid">
-      <div class="value-card reveal">
-        <div class="about-icon"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB4PSIwIiB5PSIwIiB2aWV3Qm94PSIwIDAgNTEyIDUxMi4wMDEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTIiIHhtbDpzcGFjZT0icHJlc2VydmUiIGNsYXNzPSIiPjxnPjxwYXRoIGQ9Ik0yNTYuMDAxIDQ3Ny40MDdjLTIuNTkgMC01LjE3OS0uNjY5LTcuNDk5LTIuMDA5LTIuNTItMS40NTQtNjIuMzkxLTM2LjIxNi0xMjMuMTIxLTg4LjU5NC0zNS45OTQtMzEuMDQzLTY0LjcyNi02MS44MzMtODUuMzk2LTkxLjUxM0MxMy4yMzcgMjU2Ljg4NS0uMjE0IDIxOS45NDMuMDAzIDE4NS40OWMuMjU0LTQwLjA5IDE0LjYxMy03Ny43OTIgNDAuNDM1LTEwNi4xNjIgMjYuMjU4LTI4Ljg0OCA2MS4zLTQ0LjczNCA5OC42NzMtNDQuNzM0IDQ3Ljg5NyAwIDkxLjY4OCAyNi44MyAxMTYuODkxIDY5LjMzMiAyNS4yMDMtNDIuNTAxIDY4Ljk5NC02OS4zMzIgMTE2Ljg5MS02OS4zMzIgMzUuMzA4IDAgNjguOTk1IDE0LjMzNCA5NC44NTkgNDAuMzYyIDI4LjM4NCAyOC41NjMgNDQuNTExIDY4LjkyMSA0NC4yNDcgMTEwLjcyNC0uMjE4IDM0LjM5My0xMy45MjEgNzEuMjc5LTQwLjcyOCAxMDkuNjMyLTIwLjczNCAyOS42NjUtNDkuNDI2IDYwLjQ0MS04NS4yNzkgOTEuNDc1LTYwLjUwOCA1Mi4zNzMtMTE5Ljk0OSA4Ny4xMzQtMTIyLjQ1IDg4LjU4OGExNS4wMDggMTUuMDA4IDAgMCAxLTcuNTQxIDIuMDMyeiIgZmlsbD0iI2ZmZmZmZiIvPjwvZz48L3N2Zz4=" alt=""></div>
-        <h3>Fe</h3>
-        <p>Guiados por principios cristianos</p>
-      </div>
-      <div class="value-card reveal">
-        <div class="about-icon"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB4PSIwIiB5PSIwIiB2aWV3Qm94PSIwIDAgNjQgNjQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTIiIHhtbDpzcGFjZT0icHJlc2VydmUiIGNsYXNzPSIiPjxnPjxnIGRhdGEtbmFtZT0iMjIgVHJvcGh5Ij48cGF0aCBkPSJNNDYgNTBoLTF2LTFhMyAzIDAgMCAwLTMtM2gtLjg2MWwuNjM1LTQuODcxYTEgMSAwIDAgMC0xLjk4My0uMjU4TDM5LjEyMiA0NkgyNC44NThMMTkuMTY0IDguOTg4YTYwLjY0MyA2MC42NDMgMCAwIDAgMjUuNi02LjI1M2wtNC40NTIgMzQuMTM2YTEgMSAwIDAgMCAxLjk4NC4yNThsNC43LTM2QTEgMSAwIDAgMCA0NS41NTMuMTA1bC0xLjQ3OC43NEE1OC42MTcgNTguNjE3IDAgMCAxIDE4IDdhMSAxIDAgMCAwLS45ODggMS4xNTJMMjIuODM0IDQ2SDIyYTMgMyAwIDAgMC0zIDN2MWgtMWEzIDMgMCAwIDAtMyAzdjEwYTEgMSAwIDAgMCAxIDFoMzJhMSAxIDAgMCAwIDEtMVY1M2EzIDMgMCAwIDAtMy0zem0xIDEySDE3di05YTEgMSAwIDAgMSAxLTFoNmExIDEgMCAwIDAgMC0yaC0zdi0xYTEgMSAwIDAgMSAxLTFoMjBhMSAxIDAgMCAxIDEgMXYxSDI4YTEgMSAwIDAgMCAwIDJoMThhMSAxIDAgMCAxIDEgMXoiIGZpbGw9IiNmZmZmZmYiLz48L2c+PC9nPjwvc3ZnPg==" alt=""></div>
-        <h3>Integridad</h3>
-        <p>Honestidad en cada acción</p>
-      </div>
-      <div class="value-card reveal">
-        <div class="about-icon"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB4PSIwIiB5PSIwIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgY2xhc3M9IiI+PGc+PHBhdGggZD0iTTEzOS4zMjUgMTE4LjExNCA5Ni45MDMgNzUuNjkyYy01Ljg1OS01Ljg1OS0xNS4zNTItNS44NTktMjEuMjExIDBzLTUuODU5IDE1LjM1MiAwIDIxLjIxMWw0Mi40MjIgNDIuNDIyYzUuODU5IDUuODU5IDE1LjM1MiA1Ljg1OSAyMS4yMTEgMCA1Ljg1OS01Ljg1OSA1Ljg1OS0xNS4zNTIgMC0yMS4yMTF6TTc2IDI0MUgxNWMtOC4yOTEgMC0xNSA2LjcwOS0xNSAxNXM2LjcwOSAxNSAxNSAxNWg2MWM4LjI5MSAwIDE1LTYuNzA5IDE1LTE1cy02LjcwOS0xNS0xNS0xNXpNNDk3IDI0MWgtNjFjLTguMjkxIDAtMTUgNi43MDktMTUgMTVzNi43MDkgMTUgMTUgMTVoNjFjOC4yOTEgMCAxNS02LjcwOSAxNS0xNXMtNi43MDktMTUtMTUtMTV6TTQzNi4zMDggNzUuNjkyYy01Ljg1OS01Ljg1OS0xNS4zNTItNS44NTktMjEuMjExIDBsLTQyLjQyMiA0Mi40MjJjLTUuODU5IDUuODU5LTUuODU5IDE1LjM1MiAwIDIxLjIxMSA1Ljg1OSA1Ljg1OSAxNS4zNTIgNS44NTkgMjEuMjExIDBsNDIuNDIyLTQyLjQyMmM1Ljg1OS01Ljg1OSA1Ljg1OS0xNS4zNTEgMC0yMS4yMTF6TTI1NiAwYy04LjI5MSAwLTE1IDYuNzA5LTE1IDE1djYxYzAgOC4yOTEgNi43MDkgMTUgMTUgMTVzMTUtNi43MDkgMTUtMTVWMTVjMC04LjI5MS02LjcwOS0xNS0xNS0xNXpNMzQwIDE1MC4wOTljLTMyLjY5OS0yNS44LTc1LTM1LjA5OS0xMTYuNC0yNS4xOTktNDggMTEuMS04Ni42OTkgNDkuMTk5LTk4LjQgOTYuOS0xMS43IDQ3Ljk5OSAxLjggOTYuNTk5IDM2LjI5OSAxMzAuNDk5QzE3My44IDM2NC42IDE4MSAzODMuODk5IDE4MSA0MDMuN3YzLjNjMCA4LjM5OSA2LjU5OSAxNSAxNSAxNWgxMjBjOC40MDEgMCAxNS02LjYwMSAxNS0xNXYtMy4zYzAtMTkuNTAxIDcuNS0zOS40MDEgMjAuNy01Mi4zMDFDMzc2LjkwMSAzMjUuODk5IDM5MSAyOTIgMzkxIDI1NmMwLTQxLjQtMTguNi04MC4xMDEtNTEtMTA1LjkwMXpNMjU2IDIxMWMtMjIuNjMgMC0zOS4xMDQgMTUuMDExLTQzLjQxOCAzMi4zODgtMS45NjMgNy45MDMtOS45MTUgMTIuOTQ3LTE4LjE3OSAxMC45NTctOC4wMjctMS45OTItMTIuOTM1LTEwLjEzNy0xMC45NDItMTguMTY0IDcuNDMyLTMwIDM1LjYxLTU1LjE4MSA3Mi41MzktNTUuMTgxIDguMjkxIDAgMTUgNi43MDkgMTUgMTVzLTYuNzA5IDE1LTE1IDE1ek0xOTYgNDUydjE1YzAgMjQuODE0IDIwLjE4NiA0NSA0NSA0NWgzMGMyNC44MTQgMCA0NS0yMC4xODYgNDUtNDV2LTE1SDE5NnoiIGZpbGw9IiNmZmZmZmYiLz48L2c+PC9zdmc+" alt=""></div>
-        <h3>Pensamiento Crítico</h3>
-        <p>Análisis y reflexión constante</p>
-      </div>
-      <div class="value-card reveal">
-        <div class="about-icon"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB4PSIwIiB5PSIwIiB2aWV3Qm94PSIwIDAgMzIgMzIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTIiIHhtbDpzcGFjZT0icHJlc2VydmUiIGNsYXNzPSIiPjxnPjxwYXRoIGQ9Im0yOS45MTEgMTMuNzUtNi4yMjkgNi4wNzIgMS40NzEgOC41NzZhMSAxIDAgMCAxLTEuNDUxIDEuMDU0TDE2IDI1LjQwM2wtNy43MDEgNC4wNDhhMSAxIDAgMCAxLTEuNDUxLTEuMDU0bDEuNDcxLTguNTc2LTYuMjMtNi4wNzFhMSAxIDAgMCAxIC41NTUtMS43MDZsOC42MDktMS4yNSAzLjg1LTcuODAyYy4zMzctLjY4MyAxLjQ1Ny0uNjgzIDEuNzk0IDBsMy44NSA3LjgwMiA4LjYwOSAxLjI1YTEuMDAyIDEuMDAyIDAgMCAxIC41NTUgMS43MDZ6IiBmaWxsPSIjZmZmZmZmIi8+PC9nPjwvc3ZnPg==" alt=""></div>
-        <h3>Excelencia</h3>
-        <p>Mejora continua en todo</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FILOSOFÍA ===== -->
-<section class="philosophy" id="filosofia">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="section-eyebrow">Cinco pilares</span>
-      <h2 class="section-title">Nuestra Filosofía</h2>
-      <p class="section-sub">En Blue Lion Academy creemos que cada estudiante necesita un ambiente de apoyo hacia la excelencia académica, emocional, social y de carácter.</p>
-    </div>
-    <div class="philosophy-grid">
-      <div class="philosophy-card reveal">
-        <span class="philosophy-num">01</span>
-        <h3>Cristo como fundamento</h3>
-        <p>La fe guía nuestra enseñanza, nuestras decisiones y la manera en que acompañamos a cada estudiante, inspirando propósito y responsabilidad.</p>
-      </div>
-      <div class="philosophy-card reveal">
-        <span class="philosophy-num">02</span>
-        <h3>Pensamiento crítico para la vida</h3>
-        <p>Fomentamos análisis, reflexión y cuestionamiento respetuoso, para que los estudiantes evalúen información y tomen decisiones sabias.</p>
-      </div>
-      <div class="philosophy-card reveal">
-        <span class="philosophy-num">03</span>
-        <h3>Educación bilingüe para un mundo global</h3>
-        <p>Desarrollamos el dominio del inglés y del español de forma natural, preparando a nuestros estudiantes para liderar en un entorno internacional.</p>
-      </div>
-      <div class="philosophy-card reveal">
-        <span class="philosophy-num">04</span>
-        <h3>Creatividad, emprendimiento y estrategia</h3>
-        <p>Promovemos proyectos y desafíos que despiertan el espíritu creador y la capacidad de transformar ideas en acciones.</p>
-      </div>
-      <div class="philosophy-card reveal">
-        <span class="philosophy-num">05</span>
-        <h3>Formación integral y personalizada</h3>
-        <p>Cada estudiante es único. Acompañamos su crecimiento académico, emocional y espiritual en un ambiente seguro y motivador.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== PERFIL DEL ESTUDIANTE ===== -->
-<section class="student-profile" id="perfil">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="section-eyebrow">A quién formamos</span>
-      <h2 class="section-title">Perfil del Estudiante Blue Lion</h2>
-    </div>
-    <div class="profile-grid">
-      <div class="profile-item reveal">
-        <div class="profile-check"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB4PSIwIiB5PSIwIiB2aWV3Qm94PSIwIDAgNDA4LjU3NiA0MDguNTc2IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiBjbGFzcz0iIj48Zz48cGF0aCBkPSJNMjA0LjI4OCAwQzkxLjY0OCAwIDAgOTEuNjQ4IDAgMjA0LjI4OHM5MS42NDggMjA0LjI4OCAyMDQuMjg4IDIwNC4yODggMjA0LjI4OC05MS42NDggMjA0LjI4OC0yMDQuMjg4UzMxNi45MjggMCAyMDQuMjg4IDB6bTExNC4xNzYgMTUwLjUyOC0xMzAuNTYgMTI5LjUzNmMtNy42OCA3LjY4LTE5Ljk2OCA4LjE5Mi0yOC4xNi41MTJMOTAuNjI0IDIxNy42Yy04LjE5Mi03LjY4LTguNzA0LTIwLjQ4LTEuNTM2LTI4LjY3MiA3LjY4LTguMTkyIDIwLjQ4LTguNzA0IDI4LjY3Mi0xLjAyNGw1NC43ODQgNTAuMTc2TDI4OS4yOCAxMjEuMzQ0YzguMTkyLTguMTkyIDIwLjk5Mi04LjE5MiAyOS4xODQgMHM4LjE5MiAyMC45OTIgMCAyOS4xODR6IiBmaWxsPSIjZmZmZmZmIi8+PC9nPjwvc3ZnPg==" alt=""></div>
-        <div><h4>Crítico y Analítico</h4><p>Piensa con profundidad, cuestiona con respeto y propone soluciones creativas a problemas reales.</p></div>
-      </div>
-      <div class="profile-item reveal">
-        <div class="profile-check"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB4PSIwIiB5PSIwIiB2aWV3Qm94PSIwIDAgNDA4LjU3NiA0MDguNTc2IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiBjbGFzcz0iIj48Zz48cGF0aCBkPSJNMjA0LjI4OCAwQzkxLjY0OCAwIDAgOTEuNjQ4IDAgMjA0LjI4OHM5MS42NDggMjA0LjI4OCAyMDQuMjg4IDIwNC4yODggMjA0LjI4OC05MS42NDggMjA0LjI4OC0yMDQuMjg4UzMxNi45MjggMCAyMDQuMjg4IDB6bTExNC4xNzYgMTUwLjUyOC0xMzAuNTYgMTI5LjUzNmMtNy42OCA3LjY4LTE5Ljk2OCA4LjE5Mi0yOC4xNi41MTJMOTAuNjI0IDIxNy42Yy04LjE5Mi03LjY4LTguNzA0LTIwLjQ4LTEuNTM2LTI4LjY3MiA3LjY4LTguMTkyIDIwLjQ4LTguNzA0IDI4LjY3Mi0xLjAyNGw1NC43ODQgNTAuMTc2TDI4OS4yOCAxMjEuMzQ0YzguMTkyLTguMTkyIDIwLjk5Mi04LjE5MiAyOS4xODQgMHM4LjE5MiAyMC45OTIgMCAyOS4xODR6IiBmaWxsPSIjZmZmZmZmIi8+PC9nPjwvc3ZnPg==" alt=""></div>
-        <div><h4>Bilingüe y Global</h4><p>Se comunica eficazmente en inglés y español, con una visión internacional y abierta al mundo.</p></div>
-      </div>
-      <div class="profile-item reveal">
-        <div class="profile-check"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB4PSIwIiB5PSIwIiB2aWV3Qm94PSIwIDAgNDA4LjU3NiA0MDguNTc2IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiBjbGFzcz0iIj48Zz48cGF0aCBkPSJNMjA0LjI4OCAwQzkxLjY0OCAwIDAgOTEuNjQ4IDAgMjA0LjI4OHM5MS42NDggMjA0LjI4OCAyMDQuMjg4IDIwNC4yODggMjA0LjI4OC05MS42NDggMjA0LjI4OC0yMDQuMjg4UzMxNi45MjggMCAyMDQuMjg4IDB6bTExNC4xNzYgMTUwLjUyOC0xMzAuNTYgMTI5LjUzNmMtNy42OCA3LjY4LTE5Ljk2OCA4LjE5Mi0yOC4xNi41MTJMOTAuNjI0IDIxNy42Yy04LjE5Mi03LjY4LTguNzA0LTIwLjQ4LTEuNTM2LTI4LjY3MiA3LjY4LTguMTkyIDIwLjQ4LTguNzA0IDI4LjY3Mi0xLjAyNGw1NC43ODQgNTAuMTc2TDI4OS4yOCAxMjEuMzQ0YzguMTkyLTguMTkyIDIwLjk5Mi04LjE5MiAyOS4xODQgMHM4LjE5MiAyMC45OTIgMCAyOS4xODR6IiBmaWxsPSIjZmZmZmZmIi8+PC9nPjwvc3ZnPg==" alt=""></div>
-        <div><h4>Emprendedor y Creativo</h4><p>Diseña proyectos, crea ideas y demuestra iniciativa para innovar y transformar su entorno.</p></div>
-      </div>
-      <div class="profile-item reveal">
-        <div class="profile-check"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB4PSIwIiB5PSIwIiB2aWV3Qm94PSIwIDAgNDA4LjU3NiA0MDguNTc2IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiBjbGFzcz0iIj48Zz48cGF0aCBkPSJNMjA0LjI4OCAwQzkxLjY0OCAwIDAgOTEuNjQ4IDAgMjA0LjI4OHM5MS42NDggMjA0LjI4OCAyMDQuMjg4IDIwNC4yODggMjA0LjI4OC05MS42NDggMjA0LjI4OC0yMDQuMjg4UzMxNi45MjggMCAyMDQuMjg4IDB6bTExNC4xNzYgMTUwLjUyOC0xMzAuNTYgMTI5LjUzNmMtNy42OCA3LjY4LTE5Ljk2OCA4LjE5Mi0yOC4xNi41MTJMOTAuNjI0IDIxNy42Yy04LjE5Mi03LjY4LTguNzA0LTIwLjQ4LTEuNTM2LTI4LjY3MiA3LjY4LTguMTkyIDIwLjQ4LTguNzA0IDI4LjY3Mi0xLjAyNGw1NC43ODQgNTAuMTc2TDI4OS4yOCAxMjEuMzQ0YzguMTkyLTguMTkyIDIwLjk5Mi04LjE5MiAyOS4xODQgMHM4LjE5MiAyMC45OTIgMCAyOS4xODR6IiBmaWxsPSIjZmZmZmZmIi8+PC9nPjwvc3ZnPg==" alt=""></div>
-        <div><h4>Líder con Valores Cristianos</h4><p>Actúa con fe, ética, servicio y respeto, siendo ejemplo dentro y fuera de la comunidad.</p></div>
-      </div>
-      <div class="profile-item reveal">
-        <div class="profile-check"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB4PSIwIiB5PSIwIiB2aWV3Qm94PSIwIDAgNDA4LjU3NiA0MDguNTc2IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiBjbGFzcz0iIj48Zz48cGF0aCBkPSJNMjA0LjI4OCAwQzkxLjY0OCAwIDAgOTEuNjQ4IDAgMjA0LjI4OHM5MS42NDggMjA0LjI4OCAyMDQuMjg4IDIwNC4yODggMjA0LjI4OC05MS42NDggMjA0LjI4OC0yMDQuMjg4UzMxNi45MjggMCAyMDQuMjg4IDB6bTExNC4xNzYgMTUwLjUyOC0xMzAuNTYgMTI5LjUzNmMtNy42OCA3LjY4LTE5Ljk2OCA4LjE5Mi0yOC4xNi41MTJMOTAuNjI0IDIxNy42Yy04LjE5Mi03LjY4LTguNzA0LTIwLjQ4LTEuNTM2LTI4LjY3MiA3LjY4LTguMTkyIDIwLjQ4LTguNzA0IDI4LjY3Mi0xLjAyNGw1NC43ODQgNTAuMTc2TDI4OS4yOCAxMjEuMzQ0YzguMTkyLTguMTkyIDIwLjk5Mi04LjE5MiAyOS4xODQgMHM4LjE5MiAyMC45OTIgMCAyOS4xODR6IiBmaWxsPSIjZmZmZmZmIi8+PC9nPjwvc3ZnPg==" alt=""></div>
-        <div><h4>Resiliente y Estratégico</h4><p>Enfrenta retos con valentía, organiza sus ideas y planifica para alcanzar metas con sabiduría.</p></div>
-      </div>
-      <div class="profile-item reveal">
-        <div class="profile-check"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB4PSIwIiB5PSIwIiB2aWV3Qm94PSIwIDAgNDA4LjU3NiA0MDguNTc2IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiBjbGFzcz0iIj48Zz48cGF0aCBkPSJNMjA0LjI4OCAwQzkxLjY0OCAwIDAgOTEuNjQ4IDAgMjA0LjI4OHM5MS42NDggMjA0LjI4OCAyMDQuMjg4IDIwNC4yODggMjA0LjI4OC05MS42NDggMjA0LjI4OC0yMDQuMjg4UzMxNi45MjggMCAyMDQuMjg4IDB6bTExNC4xNzYgMTUwLjUyOC0xMzAuNTYgMTI5LjUzNmMtNy42OCA3LjY4LTE5Ljk2OCA4LjE5Mi0yOC4xNi41MTJMOTAuNjI0IDIxNy42Yy04LjE5Mi03LjY4LTguNzA0LTIwLjQ4LTEuNTM2LTI4LjY3MiA3LjY4LTguMTkyIDIwLjQ4LTguNzA0IDI4LjY3Mi0xLjAyNGw1NC43ODQgNTAuMTc2TDI4OS4yOCAxMjEuMzQ0YzguMTkyLTguMTkyIDIwLjk5Mi04LjE5MiAyOS4xODQgMHM4LjE5MiAyMC45OTIgMCAyOS4xODR6IiBmaWxsPSIjZmZmZmZmIi8+PC9nPjwvc3ZnPg==" alt=""></div>
-        <div><h4>Comprometido con la Excelencia</h4><p>Busca aprender, mejorar y dar lo mejor de sí en cada área de su vida.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== OFERTA ACADÉMICA ===== -->
-<section class="academic-offer" id="oferta-academica">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="section-eyebrow">Un camino que se eleva</span>
-      <h2 class="section-title">Oferta Académica</h2>
-      <p class="section-sub">Acompañamos a cada estudiante desde sus primeros pasos hasta el desarrollo de bases sólidas para su futuro académico.</p>
-    </div>
-
-    <div class="rise-track">
-      <div class="rise-step reveal">
-        <div class="rise-dot"></div>
-        <div class="rise-card">
-          <h3>Day Care</h3>
-          <p>Atención integral en un ambiente seguro, estimulante y lleno de amor, enfocado en el desarrollo emocional y social.</p>
-        </div>
-      </div>
-      <div class="rise-step reveal">
-        <div class="rise-dot"></div>
-        <div class="rise-card">
-          <h3>Pre Kinder</h3>
-          <p>Estimulación temprana a través del juego, fomentando la curiosidad, el lenguaje y la interacción social.</p>
-        </div>
-      </div>
-      <div class="rise-step reveal">
-        <div class="rise-dot"></div>
-        <div class="rise-card">
-          <h3>Kinder</h3>
-          <p>Desarrollo de habilidades cognitivas, motrices y emocionales con un enfoque bilingüe.</p>
-        </div>
-      </div>
-      <div class="rise-step reveal">
-        <div class="rise-dot"></div>
-        <div class="rise-card">
-          <h3>Preescolar</h3>
-          <p>Bases académicas sólidas que fortalecen la lectura, escritura y pensamiento lógico.</p>
-        </div>
-      </div>
-      <div class="rise-step reveal">
-        <div class="rise-dot"></div>
-        <div class="rise-card">
-          <h3>1° a 3° Grado</h3>
-          <p>Formación académica integral con pensamiento crítico, valores cristianos y educación bilingüe.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== INSTALACIONES ===== -->
-<section class="facilities" id="instalaciones">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="section-eyebrow">Nuestro campus</span>
-      <h2 class="section-title">Instalaciones</h2>
-      <p class="section-sub">Un campus diseñado para inspirar el aprendizaje, fomentar la creatividad y crear un ambiente seguro donde cada estudiante pueda crecer.</p>
-    </div>
-    <div class="facilities-grid">
-      <div class="facility-image reveal"><img src="img/Bla1.jpg" alt="Instalaciones de Blue Lion Academy" loading="lazy"></div>
-      <div class="facility-image reveal"><img src="img/Bla2.jpg" alt="Instalaciones de Blue Lion Academy" loading="lazy"></div>
-      <div class="facility-image reveal"><img src="img/Bla3.jpg" alt="Instalaciones de Blue Lion Academy" loading="lazy"></div>
-      <div class="facility-image reveal"><img src="img/Bla4.jpg" alt="Instalaciones de Blue Lion Academy" loading="lazy"></div>
-      <div class="facility-image reveal"><img src="img/Bla5.jpg" alt="Instalaciones de Blue Lion Academy" loading="lazy"></div>
-      <div class="facility-image reveal"><img src="img/Bla6.jpg" alt="Instalaciones de Blue Lion Academy" loading="lazy"></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== CONTACTO ===== -->
-<section class="contact" id="contacto">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="section-eyebrow">Hablemos</span>
-      <h2 class="section-title">Contáctanos</h2>
-      <p class="section-sub">¿Interesado en formar parte de Blue Lion Academy? Estamos aquí para resolver todas tus dudas.</p>
-    </div>
-
-    <div class="contact-methods">
-      <div class="contact-method reveal">
-        <div class="contact-method-icon">✉️</div>
-        <h4>Email</h4>
-        <p>info@bluelionacademy.net</p>
-      </div>
-      <div class="contact-method reveal">
-        <div class="contact-method-icon">📞</div>
-        <h4>Teléfono</h4>
-        <p>+507 6972-6448</p>
-      </div>
-      <div class="contact-method reveal">
-        <div class="contact-method-icon">📍</div>
-        <h4>Ubicación</h4>
-        <p>Barriada Santa Sofía, Vía 24 de Diciembre, Ciudad de Panamá</p>
-      </div>
-    </div>
-
-    <div class="contact-layout">
-      <div class="contact-aside reveal">
-        <div class="facility-image"><img src="img/Bla5.jpg" alt="Estudiantes de Blue Lion Academy" loading="lazy"></div>
-        <h3>Agenda una visita</h3>
-        <p>Conoce el campus, el equipo docente y nuestro modelo bilingüe con fundamentos cristianos de cerca. Cuéntanos el grado de interés de tu hijo o hija y te contactaremos a la brevedad.</p>
-      </div>
-
-      <form class="contact-form reveal" action="send.php" method="POST">
-        <div class="form-group">
-          <label for="nombre">Nombre completo*</label>
-          <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo">
-        </div>
-        <div class="form-group">
-          <label for="email">Email*</label>
-          <input type="email" id="email" name="email" required placeholder="tu@email.com">
-        </div>
-        <div class="form-group">
-          <label for="telefono">Teléfono</label>
-          <input type="tel" id="telefono" name="telefono" placeholder="+507 1234-5678">
-        </div>
-        <div class="form-group">
-          <label for="grado">Grado de interés</label>
-          <select id="grado" name="grado">
-            <option value="">Selecciona una opción</option>
-            <option value="daycare">Day Care</option>
-            <option value="prekinder">Pre Kinder</option>
-            <option value="kinder">Kinder</option>
-            <option value="preescolar">Preescolar</option>
-            <option value="primaria">1° a 3° Grado</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="mensaje">Mensaje*</label>
-          <textarea id="mensaje" name="mensaje" required placeholder="Cuéntanos cómo podemos ayudarte..."></textarea>
-        </div>
-        <button type="submit" class="form-submit">Enviar mensaje</button>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FOOTER ===== -->
-<footer class="footer">
-  <div class="wrap">
-    <div class="footer-grid">
-      <div class="footer-section">
-        <h3>Blue Lion Academy</h3>
-        <p>Una institución educativa comprometida con la excelencia académica y la formación de líderes con propósito.</p>
-      </div>
-      <div class="footer-section">
-        <h3>Enlaces rápidos</h3>
-        <a href="#inicio">Inicio</a>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#filosofia">Filosofía</a>
-        <a href="#contacto">Contacto</a>
-      </div>
-      <div class="footer-section">
-        <h3>Síguenos</h3>
-        <a href="https://www.instagram.com/bluelionacademy/" target="_blank" rel="noopener">Instagram: @bluelionacademy</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 Blue Lion Academy. Todos los derechos reservados.</p>
-    </div>
-  </div>
-</footer>
-
-<!-- ===== WHATSAPP FLOTANTE ===== -->
-<a href="https://wa.me/50769726448" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
-  <img src="img/whatsap.png" alt="">
-</a>
-
-<script src="./js/script.js" defer></script>
+    <script src="./js/script.js" defer></script>
 </body>
+
 </html>
