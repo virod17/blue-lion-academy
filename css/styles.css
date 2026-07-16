@@ -117,6 +117,22 @@
   }
   .btn-primary:hover{background:var(--gold-dark);transform:translateY(-1px);}
 
+  /* Botón "Aplicar ahora" dentro del header/nav-menu — más específico
+     que .btn-primary, así que estas reglas ganan sin tocar otros botones */
+
+  .nav-menu .btn-primary{
+    background:var(--gold);
+    color:var(--navy-900) !important;
+    border-radius:8px;
+    padding:.2rem 1rem;
+  }
+
+  .nav-menu .btn-primary:hover{
+    background:var(--gold-dark);
+    color:#fff !important;
+    transform:translateY(-1px);
+  }
+
   .btn-secondary{
     background:transparent;
     color:#fff;
@@ -344,7 +360,7 @@
     border-radius:12px;
     padding:1.4rem 1.1rem;
     width:100%;
-    min-height:190px;
+    height:210px;
     display:flex;
     flex-direction:column;
   }
@@ -354,7 +370,7 @@
   @media (max-width:900px){
     .rise-track{grid-template-columns:1fr;gap:1rem;}
     .rise-step{transform:none !important;flex-direction:row;text-align:left;align-items:flex-start;gap:1rem;}
-    .rise-card{min-height:0;}
+    .rise-card{height:auto;}
     .rise-dot{margin-bottom:0;margin-top:.4rem;}
   }
 
