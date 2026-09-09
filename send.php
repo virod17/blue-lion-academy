@@ -1,86 +1,533 @@
 <?php
+
+declare(strict_types=1);
+
 /**
- * send.php — Procesa el formulario de contacto de Blue Lion Academy
- * y envía un correo a la dirección de la academia.
+ * send.php
  *
- * Requisitos del hosting:
- * - Soporte PHP (la mayoría de los hostings compartidos lo tienen).
- * - La función mail() habilitada. Si los correos no llegan o caen en spam,
- *   revisa con tu hosting si necesitas usar SMTP autenticado en su lugar
- *   (te puedo armar esa versión con PHPMailer si hace falta).
+ * Formulario de contacto de Blue Lions Academy.
+ *
+ * Envía el correo mediante la API HTTPS de Resend.
+ *
+ * From:
+ * no-reply@bluelionsacademy.com
+ *
+ * To:
+ * contacto@bluelionsacademy.com
+ *
+ * Reply-To:
+ * correo proporcionado por el visitante.
  */
 
-// ⚠️ CONFIRMA este correo antes de subir el archivo
-$destinatario = "info@bluelionacademy.net";
+// ======================================================
+// CONFIGURACIÓN
+// ======================================================
 
-// Solo aceptar envíos por POST (evita accesos directos por URL)
-if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    header("Location: index.html");
+$destinatario = 'contacto@bluelionsacademy.com';
+
+$remitente = 'Blue Lions Academy <no-reply@bluelionsacademy.com>';
+
+$resendApiKey = getenv('RESEND_API_KEY');
+
+
+// ======================================================
+// VALIDAR CONFIGURACIÓN DEL SERVIDOR
+// ======================================================
+
+if (!$resendApiKey) {
+
+    error_log('RESEND_API_KEY no está configurada.');
+
+    http_response_code(500);
+
+    echo '
+        <h2>No se pudo enviar el mensaje</h2>
+        <p>El servicio de correo no está disponible en este momento.</p>
+        <p><a href="index.html">Volver</a></p>
+    ';
+
     exit;
 }
 
-// Campo trampa anti-spam (bots suelen rellenar todos los campos, incluido este oculto)
+
+// ======================================================
+// SOLO PERMITIR POST
+// ======================================================
+
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+
+    header('Location: index.html');
+
+    exit;
+}
+
+
+// ======================================================
+// HONEYPOT ANTI-SPAM
+// ======================================================
+
 if (!empty($_POST['sitio_web'])) {
-    exit; // si el campo oculto viene lleno, es un bot: no hacemos nada
+
+    // Un bot probablemente llenó el campo oculto.
+
+    http_response_code(204);
+
+    exit;
 }
 
-// Recoger y limpiar los datos del formulario
-function limpiar($valor) {
-    return htmlspecialchars(trim($valor), ENT_QUOTES, 'UTF-8');
+
+// ======================================================
+// LIMPIEZA DE CAMPOS
+// ======================================================
+
+function limpiarTexto(string $valor): string
+{
+    $valor = trim($valor);
+
+    // Eliminar caracteres de control.
+    $valor = preg_replace(
+        '/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/u',
+        '',
+        $valor
+    );
+
+    return $valor ?? '';
 }
 
-$nombre   = limpiar($_POST['nombre'] ?? '');
-$email    = filter_var(trim($_POST['email'] ?? ''), FILTER_SANITIZE_EMAIL);
-$telefono = limpiar($_POST['telefono'] ?? '');
-$grado    = limpiar($_POST['grado'] ?? '');
-$mensaje  = limpiar($_POST['mensaje'] ?? '');
 
-// Validación mínima de campos obligatorios
+// ======================================================
+// OBTENER DATOS
+// ======================================================
+
+$nombre = limpiarTexto(
+    (string) ($_POST['nombre'] ?? '')
+);
+
+$email = trim(
+    (string) ($_POST['email'] ?? '')
+);
+
+$telefono = limpiarTexto(
+    (string) ($_POST['telefono'] ?? '')
+);
+
+$grado = limpiarTexto(
+    (string) ($_POST['grado'] ?? '')
+);
+
+$mensaje = limpiarTexto(
+    (string) ($_POST['mensaje'] ?? '')
+);
+
+
+// ======================================================
+// VALIDACIONES
+// ======================================================
+
 $errores = [];
-if ($nombre === '') $errores[] = "El nombre es obligatorio.";
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) $errores[] = "El correo no es válido.";
-if ($mensaje === '') $errores[] = "El mensaje es obligatorio.";
+
+
+/*
+ * Nombre
+ */
+
+if ($nombre === '') {
+
+    $errores[] = 'El nombre es obligatorio.';
+
+} elseif (mb_strlen($nombre) > 120) {
+
+    $errores[] = 'El nombre es demasiado largo.';
+}
+
+
+/*
+ * Email
+ */
+
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+
+    $errores[] = 'El correo no es válido.';
+}
+
+
+/*
+ * Evitar inyección CRLF
+ */
+
+if (
+    str_contains($email, "\r") ||
+    str_contains($email, "\n")
+) {
+
+    $errores[] = 'El correo contiene caracteres inválidos.';
+}
+
+
+/*
+ * Teléfono
+ */
+
+if (mb_strlen($telefono) > 30) {
+
+    $errores[] = 'El teléfono es demasiado largo.';
+}
+
+
+/*
+ * Grado
+ */
+
+if (mb_strlen($grado) > 100) {
+
+    $errores[] = 'El grado seleccionado no es válido.';
+}
+
+
+/*
+ * Mensaje
+ */
+
+if ($mensaje === '') {
+
+    $errores[] = 'El mensaje es obligatorio.';
+
+} elseif (mb_strlen($mensaje) > 5000) {
+
+    $errores[] = 'El mensaje no puede superar los 5000 caracteres.';
+}
+
+
+// ======================================================
+// RESPUESTA DE VALIDACIÓN
+// ======================================================
 
 if (!empty($errores)) {
+
     http_response_code(400);
-    echo "<h2>Hubo un problema con tu envío</h2><ul>";
-    foreach ($errores as $e) echo "<li>" . $e . "</li>";
-    echo "</ul><p><a href='index.html'>Volver</a></p>";
+
+    echo '
+        <!DOCTYPE html>
+        <html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <title>Error en el formulario</title>
+        </head>
+        <body>
+            <h2>Hubo un problema con tu envío</h2>
+            <ul>
+    ';
+
+    foreach ($errores as $error) {
+
+        echo '<li>' .
+            htmlspecialchars(
+                $error,
+                ENT_QUOTES,
+                'UTF-8'
+            ) .
+            '</li>';
+    }
+
+    echo '
+            </ul>
+
+            <p>
+                <a href="index.html">
+                    Volver
+                </a>
+            </p>
+
+        </body>
+        </html>
+    ';
+
     exit;
 }
 
-// Armar el correo
-$asunto = "Nuevo contacto desde el sitio web - Blue Lion Academy";
 
-$cuerpo  = "Se recibió un nuevo mensaje desde el formulario de contacto:\n\n";
-$cuerpo .= "Nombre: $nombre\n";
-$cuerpo .= "Email: $email\n";
-$cuerpo .= "Teléfono: " . ($telefono !== '' ? $telefono : "No proporcionado") . "\n";
-$cuerpo .= "Grado de interés: " . ($grado !== '' ? $grado : "No especificado") . "\n\n";
-$cuerpo .= "Mensaje:\n$mensaje\n";
+// ======================================================
+// ARMAR CORREO
+// ======================================================
 
-// Cabeceras: el "From" debe ser del propio dominio para evitar que el
-// correo se marque como spam; el "Reply-To" es el correo de la persona
-// que llenó el formulario, para que puedas responderle directo.
-$headers  = "From: Sitio Web Blue Lion Academy <noreply@bluelionacademy.net>\r\n";
-$headers .= "Reply-To: $nombre <$email>\r\n";
-$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+$asunto =
+    'Nuevo contacto desde el sitio web - Blue Lions Academy';
 
-$enviado = mail($destinatario, $asunto, $cuerpo, $headers);
 
-if ($enviado) {
-    echo "<!DOCTYPE html><html lang='es'><head><meta charset='UTF-8'>
-    <title>Mensaje enviado</title>
-    <meta http-equiv='refresh' content='4;url=index.html'>
-    <style>body{font-family:sans-serif;text-align:center;padding:4rem 1rem;color:#0a2540;}</style>
-    </head><body>
-    <h2>¡Gracias, $nombre!</h2>
-    <p>Tu mensaje fue enviado correctamente. Nos pondremos en contacto contigo pronto.</p>
-    <p>Serás redirigido al sitio en unos segundos, o <a href='index.html'>haz clic aquí</a>.</p>
-    </body></html>";
-} else {
+$cuerpo = <<<TEXT
+Se recibió un nuevo mensaje desde el formulario de contacto de Blue Lions Academy.
+
+DATOS DEL INTERESADO
+
+Nombre:
+{$nombre}
+
+Correo:
+{$email}
+
+Teléfono:
+{$telefono}
+
+Grado de interés:
+{$grado}
+
+MENSAJE
+
+{$mensaje}
+
+--------------------------------------------------
+
+Mensaje generado automáticamente desde:
+https://bluelionsacademy.com
+
+Para responder al interesado utilice "Responder" en su cliente de correo.
+
+TEXT;
+
+
+// ======================================================
+// PAYLOAD PARA RESEND
+// ======================================================
+
+$payload = [
+
+    'from' => $remitente,
+
+    'to' => [
+        $destinatario
+    ],
+
+    'reply_to' => $email,
+
+    'subject' => $asunto,
+
+    'text' => $cuerpo,
+
+];
+
+
+// ======================================================
+// LLAMAR API DE RESEND
+// ======================================================
+
+$curl = curl_init(
+    'https://api.resend.com/emails'
+);
+
+curl_setopt_array(
+    $curl,
+    [
+
+        CURLOPT_POST => true,
+
+        CURLOPT_RETURNTRANSFER => true,
+
+        CURLOPT_CONNECTTIMEOUT => 10,
+
+        CURLOPT_TIMEOUT => 20,
+
+        CURLOPT_HTTPHEADER => [
+
+            'Authorization: Bearer ' .
+                $resendApiKey,
+
+            'Content-Type: application/json',
+
+        ],
+
+        CURLOPT_POSTFIELDS =>
+            json_encode(
+                $payload,
+                JSON_UNESCAPED_UNICODE
+            ),
+
+    ]
+);
+
+
+$response = curl_exec($curl);
+
+$httpCode = curl_getinfo(
+    $curl,
+    CURLINFO_HTTP_CODE
+);
+
+$curlError = curl_error($curl);
+
+curl_close($curl);
+
+
+// ======================================================
+// ERROR DE CONEXIÓN
+// ======================================================
+
+if ($response === false || $curlError !== '') {
+
+    error_log(
+        'Error conectando con Resend: ' .
+        $curlError
+    );
+
     http_response_code(500);
-    echo "<h2>No se pudo enviar el mensaje</h2>
-    <p>Ocurrió un error en el servidor. Por favor intenta de nuevo más tarde o escríbenos directamente a $destinatario.</p>
-    <p><a href='index.html'>Volver</a></p>";
+
+    echo '
+        <h2>No se pudo enviar el mensaje</h2>
+
+        <p>
+            Ocurrió un error al conectar con el
+            servicio de correo.
+        </p>
+
+        <p>
+            Intenta nuevamente más tarde.
+        </p>
+
+        <p>
+            <a href="index.html">
+                Volver
+            </a>
+        </p>
+    ';
+
+    exit;
 }
+
+
+// ======================================================
+// ERROR DEVUELTO POR RESEND
+// ======================================================
+
+if ($httpCode < 200 || $httpCode >= 300) {
+
+    error_log(
+        'Resend HTTP ' .
+        $httpCode .
+        ': ' .
+        $response
+    );
+
+    http_response_code(500);
+
+    echo '
+        <h2>No se pudo enviar el mensaje</h2>
+
+        <p>
+            Ocurrió un error procesando
+            el correo.
+        </p>
+
+        <p>
+            Intenta nuevamente más tarde
+            o escríbenos directamente a
+            contacto@bluelionsacademy.com.
+        </p>
+
+        <p>
+            <a href="index.html">
+                Volver
+            </a>
+        </p>
+    ';
+
+    exit;
+}
+
+
+// ======================================================
+// RESPUESTA EXITOSA
+// ======================================================
+
+$nombreSeguro = htmlspecialchars(
+    $nombre,
+    ENT_QUOTES,
+    'UTF-8'
+);
+
+echo <<<HTML
+
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Mensaje enviado</title>
+
+    <meta
+        http-equiv="refresh"
+        content="4;url=index.html"
+    >
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 4rem 1rem;
+            color: #132044;
+            background: #f8fafc;
+        }
+
+        .card {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow:
+                0 8px 30px
+                rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            color: #132044;
+        }
+
+        a {
+            color: #207AB6;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="card">
+
+        <h2>
+            ¡Gracias, {$nombreSeguro}!
+        </h2>
+
+        <p>
+            Tu mensaje fue enviado correctamente.
+        </p>
+
+        <p>
+            Nos pondremos en contacto contigo pronto.
+        </p>
+
+        <p>
+            Serás redirigido al sitio en unos segundos.
+        </p>
+
+        <p>
+            <a href="index.html">
+                Volver a Blue Lions Academy
+            </a>
+        </p>
+
+    </div>
+
+</body>
+
+</html>
+
+HTML;
