@@ -450,6 +450,20 @@
     background:var(--gold);
     transform:scale(1.25);
   }
+  .carousel-slide {
+    position: relative;
+}
+
+.carousel-caption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 2rem 1.5rem 1rem;
+    color: #fff;
+    font-weight: 600;
+    background: linear-gradient(transparent, rgba(12, 31, 61, 0.85));
+}
 
   /* ============ CONTACT ============ */
   .contact{padding:6rem 0;background:var(--cream);}
